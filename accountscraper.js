@@ -2,8 +2,7 @@
 // @name         Export Accounts & Send to DB
 // @namespace    http://tampermonkey.net/
 // @version      2.0
-// @description  Export accounts and send to Flask SQLite backend
-// @author       Vinitus
+// @description  Export accounts and send to server
 // @match        https://omega.corp.amazon.com/viewAccounts
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=amazon.com
 // @grant        none
@@ -36,7 +35,7 @@
 
     createButton('Send to DB', '130px', async () => {
         document.querySelectorAll('.showHideButton').forEach(btn => btn.click());
-        await new Promise(resolve => setTimeout(resolve, 2000)); // wait for passwords to reveal
+        await new Promise(resolve => setTimeout(resolve, 2000)); 
 
         const data = [];
         const rows = document.querySelectorAll('tr[id^="table-row-"]');
@@ -48,7 +47,7 @@
             const passEl = row.querySelector(`#password-display-${id}`);
             const marketEl = row.querySelector(`#market-place-${id}`);
             const customerEl = row.querySelector(`#encrypted-id-${id}`);
-            const dateEl = row.querySelectorAll('td')[5]; // 6th <td> = date
+            const dateEl = row.querySelectorAll('td')[5]; 
 
             if (emailEl && passEl && marketEl && customerEl && dateEl) {
                 let marketplace = marketEl.innerText.trim().toLowerCase();
