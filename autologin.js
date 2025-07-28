@@ -3,7 +3,7 @@
 // @name         Account Manager
 // @namespace    http://tampermonkey.net/
 // @version      4.3
-// @description  Enhanced UI with last used account fetcher and active login using same logic as other buttons
+// @description  auto login
 // @author       Vinitus
 // @include      https://pre-prod.amazon.*/*
 // @include      https://es-pre-prod.amazon.*/*
